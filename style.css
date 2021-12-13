@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,400;1,700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  /* flex-direction: column; */
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+}
+:root {
+  --prim-color: darkgray;
+  --sec-color: black;
+}
+html {
+  background-color: var(--prim-color);
+  color: var(--sec-color);
+}
+html.dark {
+  --prim-color: black;
+  --sec-color: darkgray;
+}
+.toggle {
+  position: absolute;
+  top: 100px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background-color: var(--sec-color);
+  color: var(--prim-color);
+}
+
+.clock {
+  width: 200px;
+  height: 200px;
+  background-color: lightgray;
+  position: relative;
+  margin-bottom: 20px;
+}
+.needle {
+  position: absolute;
+  width: 3px;
+  height: 35px;
+  transform-origin: bottom center;
+  top: 50%;
+  left: 50%;
+}
+.needle.hour {
+  background-color: var(--prim-color);
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+.needle.minute {
+  background-color: var(--prim-color);
+  transform: translate(-50%, -100%) rotate(60deg);
+  height: 65px;
+}
+.needle.second {
+  background-color: red;
+  /* transform: translate(-50%, -100%) rotate(180deg); */
+  height: 85px;
+  width: 1px;
+}
